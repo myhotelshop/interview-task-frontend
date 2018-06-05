@@ -1,13 +1,13 @@
-import React from 'react';
-// import { hydrate, render } from "react-dom";
+import React from 'react'
+// import { hydrate, render } from "react-dom"
 // import { Provider } from 'react-redux'
 // import store from './app/redux/store'
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker'
 
-import App from './app';
-import './index.css';
+import App from './app'
+import './index.css'
 
-// const rootElement = document.getElementById("root");
+// const rootElement = document.getElementById("root")
 // if (rootElement.hasChildNodes()) {
 //   hydrate(
 //     <Provider store={store}>
@@ -24,9 +24,7 @@ import './index.css';
 
 // registerServiceWorker()
 
+import ReactDOM from 'react-dom'
 
-
-import ReactDOM from 'react-dom';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(<App />, document.getElementById('root'))
+registerServiceWorker()

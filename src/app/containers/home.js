@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import DiceRoller from '../components/diceRoller'
 import ResultsTable from '../components/resultsTable'
-import {
-  getRandomDiceNumber
-} from '../functions'
+import { getRandomDiceNumber } from '../functions'
 
 class Home extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       rolling: false,
@@ -14,7 +12,7 @@ class Home extends Component {
     }
   }
 
-  render() {
+  render () {
     const onPressRoll = () => {
       this.setState({
         diceNumbers: [
@@ -29,15 +27,17 @@ class Home extends Component {
 
     const { diceNumbers } = this.state
     return (
-      <div className="container">
+      <div className='container'>
         <DiceRoller diceNumbers={diceNumbers} />
         <ResultsTable diceNumbers={diceNumbers} />
         <div className='d-flex justify-content-center m-3'>
-          <button className='btn' onClick={() => onPressRoll()}>ROLL</button>
+          <button className='btn' onClick={() => onPressRoll()}>
+            ROLL
+          </button>
         </div>
       </div>
     )
   }
 }
 
-export default Home;
+export default Home
