@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import DiceRoller from '../components/diceRoller'
 import ResultsTable from '../components/resultsTable'
-import { getRandomDiceNumber } from '../functions'
+import { getRandomNumberArray } from '../functions'
 
 class Home extends Component {
   constructor () {
@@ -15,13 +15,7 @@ class Home extends Component {
   render () {
     const onPressRoll = () => {
       this.setState({
-        diceNumbers: [
-          getRandomDiceNumber(),
-          getRandomDiceNumber(),
-          getRandomDiceNumber(),
-          getRandomDiceNumber(),
-          getRandomDiceNumber()
-        ]
+        diceNumbers: getRandomNumberArray()
       })
     }
 

@@ -8,12 +8,13 @@ const sumAll = numbers => {
 
 const isThreeOfKind = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
+  if (sortedArray.length > 5 || isFullHouse(numbers)) return false
   let sameNumbers = 0
   sortedArray.reduce((a, b) => {
     if (a === b) sameNumbers = sameNumbers + 1
     return b
   })
-  return sameNumbers + 1 >= 3
+  return sameNumbers === 2
 }
 
 const threeOfKindPoints = numbers => {
@@ -22,21 +23,33 @@ const threeOfKindPoints = numbers => {
 
 const isFourOfKind = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
+  if (sortedArray.length > 5 || isFullHouse(numbers)) return false
   let sameNumbers = 0
   sortedArray.reduce((a, b) => {
     if (a === b) sameNumbers = sameNumbers + 1
     return b
   })
-  return sameNumbers + 1 >= 4
+  return sameNumbers === 3
 }
 
 const fourOfKindPoints = numbers => {
   return isFourOfKind(numbers) ? sumAll(numbers) : 0
 }
 
-// *** NOT DONE *** //
 const isFullHouse = numbers => {
-  return true
+  const sortedArray = numbers.sort((a, b) => a > b)
+  if (sortedArray.length > 5) return false
+  const isFirstTwoAreSame = sortedArray[0] === sortedArray[1]
+  const isLastTwoAreSame = sortedArray[3] === sortedArray[4]
+  const isFirstThreeAreSame = isFirstTwoAreSame && sortedArray[1] === sortedArray[2]
+  const isLastThreeAreSame = isLastTwoAreSame && sortedArray[2] === sortedArray[3]
+  if (isFirstThreeAreSame && isLastTwoAreSame && sortedArray[2] !== sortedArray[3]) {
+    return true
+  } else if (isFirstTwoAreSame && isLastThreeAreSame && sortedArray[1] !== sortedArray[2]) {
+    return true
+  } else {
+    return false
+  }
 }
 
 const fullHousePoints = numbers => {
@@ -48,13 +61,14 @@ const isSmallStraight = numbers => {
   // 2-3-4-5
   // 3-4-5-6
   const sortedArray = numbers.sort((a, b) => a > b)
+  if (sortedArray.length > 5) return false
   let consecutiveNumbers = 0
   sortedArray.reduce((a, b) => {
     if (a + 1 === b) consecutiveNumbers = consecutiveNumbers + 1
     return b
   })
 
-  return consecutiveNumbers + 1 >= 4
+  return consecutiveNumbers === 3
 }
 
 const smallStraightPoints = numbers => {
@@ -65,13 +79,14 @@ const isLargeStraight = numbers => {
   // 1-2-3-4-5
   // 2-3-4-5-6
   const sortedArray = numbers.sort((a, b) => a > b)
+  if (sortedArray.length > 5) return false
   let consecutiveNumbers = 0
   sortedArray.reduce((a, b) => {
     if (a + 1 === b) consecutiveNumbers = consecutiveNumbers + 1
     return b
   })
 
-  return consecutiveNumbers + 1 >= 5
+  return consecutiveNumbers === 4
 }
 
 const largeStraightPoints = numbers => {
@@ -80,13 +95,15 @@ const largeStraightPoints = numbers => {
 
 const isYahtzee = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
+  if (sortedArray.length > 5) {
+    return false
+  }
   let sameNumbers = 0
   sortedArray.reduce((a, b) => {
     if (a === b) sameNumbers = sameNumbers + 1
     return b
   })
-
-  return sameNumbers + 1 >= 6
+  return sameNumbers + 1 >= 5
 }
 
 const yahtzeePoints = numbers => {
@@ -95,6 +112,9 @@ const yahtzeePoints = numbers => {
 
 const isChange = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
+  if (sortedArray.length > 5) {
+    return false
+  }
   let sameNumbers = 0
   sortedArray.reduce((a, b) => {
     if (a === b) sameNumbers = sameNumbers + 1
@@ -110,8 +130,14 @@ const chancePoints = numbers => {
 //
 // ** ALL GLOBAL FUNCTIONS THAT ARE BEING USED IN THE APP ** //
 //
-export const getRandomDiceNumber = () => {
-  return Math.floor(Math.random() * 6) + 1
+export const getRandomNumberArray = () => {
+  return [
+    Math.floor(Math.random() * 6) + 1,
+    Math.floor(Math.random() * 6) + 1,
+    Math.floor(Math.random() * 6) + 1,
+    Math.floor(Math.random() * 6) + 1,
+    Math.floor(Math.random() * 6) + 1
+  ]
 }
 
 export const getTotalPoints = numbers => {
@@ -138,7 +164,7 @@ export const patterns = [
     points: fourOfKindPoints
   },
   {
-    label: 'Full House (Unfinished)',
+    label: 'Full House',
     isMatch: isFullHouse,
     points: fullHousePoints
   },
