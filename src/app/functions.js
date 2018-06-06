@@ -111,7 +111,7 @@ const yahtzeePoints = numbers => {
   return isYahtzee(numbers) ? 50 : 0
 }
 
-const isChange = numbers => {
+const isChance = numbers => {
   return isThreeOfKind(numbers) ||
   isFourOfKind(numbers) ||
   isFullHouse(numbers) ||
@@ -121,7 +121,7 @@ const isChange = numbers => {
 }
 
 const chancePoints = numbers => {
-  return isChange(numbers) ? sumAll(numbers) : 0
+  return isChance(numbers) ? sumAll(numbers) : 0
 }
 
 //
@@ -186,7 +186,7 @@ export const patterns = [
   },
   {
     label: 'Chance',
-    isMatch: isChange,
+    isMatch: isChance,
     points: chancePoints
   }
 ]
