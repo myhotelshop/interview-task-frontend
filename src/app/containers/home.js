@@ -19,7 +19,7 @@ class Home extends Component {
       this.setState({
         rolling: !rolling,
         diceNumbers: getRandomNumberArray()
-        // diceNumbers: [5, 5, 4, 4, 5]
+        // diceNumbers: [5, 4, 4, 4, 3]
         // diceNumbers: [5, 6, 3, 4, 1]
       })
     }

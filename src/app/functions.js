@@ -13,11 +13,15 @@ export const isThreeOfKind = numbers => {
   if (sortedArray.length > 5) return false
   if (isFullHouse(numbers)) return true
   let sameNumbers = 0
+  const foundSameNumbers = []
   sortedArray.reduce((a, b) => {
-    if (a === b) sameNumbers = sameNumbers + 1
+    if (a === b) {
+      foundSameNumbers.push(b)
+      sameNumbers = sameNumbers + 1
+    }
     return b
   })
-  return sameNumbers === 2
+  return sameNumbers === 2 && foundSameNumbers[0] === foundSameNumbers[1]
 }
 
 const threeOfKindPoints = numbers => {
