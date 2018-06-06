@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { getRandomDiceNumber } from '../functions'
 
-// const rollingSpeed = 100000 //ms
+const rollingSpeed = 100
 
 // This is a dumb component just renders the dice
 export default class Dice extends Component {
@@ -11,45 +12,26 @@ export default class Dice extends Component {
   }
 
   componentDidMount () {
-    // var intervalId = setInterval(this.tick, rollingSpeed)
-    // store intervalId in the state so it can be accessed later:
-    // this.setState({intervalId: intervalId})
+    this.intervalId = setInterval(() => this.roll(), rollingSpeed)
   }
 
   componentWillUnmount () {
-    // use intervalId from the state to clear the interval
-    // clearInterval(this.state.intervalId)
+    clearInterval(this.intervalId)
   }
 
-  tick () {
-    // console.log("Tick")
-    // this.setState({roll: this.state.roll =+ 1})
-    // if(this.state.roll >= 6) {
-    //   this.setState({roll: 1})
-    // }
+  roll () {
+    this.setState({ roll: getRandomDiceNumber() })
   }
 
   render () {
-    const { number } = this.props
-
-    // If dice is rolling returns this
-    // if(rolling) {
-    //   return (
-    //     this.diceNumbers.map(number => {
-    //       <div className='dice-container'>
-    //         <img src={require(`./assets/dice/dice-${number}.png`)} className="dice-image" alt={`dice-${number}`} />
-    //       </div>
-    //     })
-    //   )
-    // }
-
-    // If dice is not returning, shows the dice number
+    const { number, rolling } = this.props
+    const { roll } = this.state
     return (
       <div className='col m-1'>
         <img
-          src={require(`../../assets/dice/dice-${number}.png`)}
+          src={require(`../../assets/dice/dice-${rolling ? roll : number}.png`)}
           className='dice-image'
-          alt={`dice-${number + 1}`}
+          alt={`dice-${rolling ? roll : (number + 1)}`}
         />
       </div>
     )

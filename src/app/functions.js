@@ -127,13 +127,17 @@ const chancePoints = numbers => {
 //
 // ** ALL GLOBAL FUNCTIONS THAT ARE BEING USED IN THE APP ** //
 //
+export const getRandomDiceNumber = () => {
+  return Math.floor(Math.random() * 6) + 1
+}
+
 export const getRandomNumberArray = () => {
   return [
-    Math.floor(Math.random() * 6) + 1,
-    Math.floor(Math.random() * 6) + 1,
-    Math.floor(Math.random() * 6) + 1,
-    Math.floor(Math.random() * 6) + 1,
-    Math.floor(Math.random() * 6) + 1
+    getRandomDiceNumber(),
+    getRandomDiceNumber(),
+    getRandomDiceNumber(),
+    getRandomDiceNumber(),
+    getRandomDiceNumber()
   ]
 }
 
