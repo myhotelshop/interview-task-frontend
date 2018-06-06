@@ -1,4 +1,7 @@
 # Dice Game
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+[![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+
 Simplified version of the dice game [Yahtzee](https://en.wikipedia.org/wiki/Yahtzee).
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and [Bootstrap](https://getbootstrap.com/).
@@ -13,11 +16,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [yarn run eject](#yarn-eject)
 
 ## How To Start
-Follow these commands
+**Step 1:** git clone this repo:
 
-`cd /path-of-app-folder`</br>
-`yarn`</br>
-`yarn start`
+**Step 2:** cd to the cloned repo:
+
+**Step 3:** Install the Application with `yarn` or `npm i`
 
 ## Folder Structure
 ```
