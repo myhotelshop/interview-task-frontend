@@ -3,6 +3,8 @@ import DiceRoller from '../components/diceRoller'
 import ResultsTable from '../components/resultsTable'
 import { getRandomNumberArray } from '../functions'
 
+import i18n from '../../i18n'
+
 class Home extends Component {
   constructor () {
     super()
@@ -28,11 +30,11 @@ class Home extends Component {
         <DiceRoller diceNumbers={diceNumbers} rolling={rolling} />
         <div className='d-flex flex-column align-items-center justify-content-center m-3'>
           <button className='btn' onClick={() => onPressRoll()}>
-            {rolling ? `ROLLING` : `ROLL`}
+            {rolling ? i18n.t('rollingButtonLabel') : i18n.t('rollButtonLabel')}
           </button>
           {rolling && (
             <span style={{margin: '2px', color: 'purple'}} >
-              Tap Again To Stop
+              {i18n.t('stopLabel')}
             </span>
           )}
         </div>

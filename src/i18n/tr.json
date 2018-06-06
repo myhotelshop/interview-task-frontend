@@ -1,0 +1,17 @@
+{
+  "appName": "Zar Oyunu",
+  "rollButtonLabel": "Zarlari Salla",
+  "rollingButtonLabel": "Sallaniyor",
+  "stopLabel": "Durdurmak Icin Birdaha Bas",
+  "pattern": "Kombinasyon",
+  "isMatch": "Durum",
+  "points": "Puan",
+  "threeOfKind": "Uclu",
+  "fourOfKind": "Dortlu",
+  "fullHouse": "Full House",
+  "smallStraight": "Kisa Sirali",
+  "largeStraight": "Uzun Sirali",
+  "yahtzee": "Yahtzee",
+  "chance": "Sans",
+  "total": "TOPLA"
+}

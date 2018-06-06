@@ -6,6 +6,8 @@
     "bootstrap": "^4.1.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "i18next": "^11.3.2",
+    "i18next-browser-languagedetector": "^2.2.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-icons": "^2.2.7",

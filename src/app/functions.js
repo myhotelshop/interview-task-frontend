@@ -1,3 +1,5 @@
+import i18n from '../i18n'
+
 const sumAll = numbers => {
   let points = 0
   numbers.forEach(number => {
@@ -155,37 +157,37 @@ export const getTotalPoints = numbers => {
 
 export const patterns = [
   {
-    label: 'Three Of A Kind',
+    label: i18n.t('threeOfKind'),
     isMatch: isThreeOfKind,
     points: threeOfKindPoints
   },
   {
-    label: 'Four Of A Kind',
+    label: i18n.t('fourOfKind'),
     isMatch: isFourOfKind,
     points: fourOfKindPoints
   },
   {
-    label: 'Full House',
+    label: i18n.t('fullHouse'),
     isMatch: isFullHouse,
     points: fullHousePoints
   },
   {
-    label: 'Small Straight',
+    label: i18n.t('smallStraight'),
     isMatch: isSmallStraight,
     points: smallStraightPoints
   },
   {
-    label: 'Large Straight',
+    label: i18n.t('largeStraight'),
     isMatch: isLargeStraight,
     points: largeStraightPoints
   },
   {
-    label: 'Yahtzee',
+    label: i18n.t('yahtzee'),
     isMatch: isYahtzee,
     points: yahtzeePoints
   },
   {
-    label: 'Chance',
+    label: i18n.t('chance'),
     isMatch: isChance,
     points: chancePoints
   }
