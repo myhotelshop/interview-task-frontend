@@ -6,7 +6,7 @@ const sumAll = numbers => {
   return points
 }
 
-const isThreeOfKind = numbers => {
+export const isThreeOfKind = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
   if (sortedArray.length > 5) return false
   if (isFullHouse(numbers)) return true
@@ -22,7 +22,7 @@ const threeOfKindPoints = numbers => {
   return isThreeOfKind(numbers) ? sumAll(numbers) : 0
 }
 
-const isFourOfKind = numbers => {
+export const isFourOfKind = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
   if (sortedArray.length > 5 || isFullHouse(numbers)) return false
   let sameNumbers = 0
@@ -37,7 +37,7 @@ const fourOfKindPoints = numbers => {
   return isFourOfKind(numbers) ? sumAll(numbers) : 0
 }
 
-const isFullHouse = numbers => {
+export const isFullHouse = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
   if (sortedArray.length > 5) return false
   const isFirstTwoAreSame = sortedArray[0] === sortedArray[1]
@@ -57,7 +57,7 @@ const fullHousePoints = numbers => {
   return isFullHouse(numbers) ? 25 : 0
 }
 
-const isSmallStraight = numbers => {
+export const isSmallStraight = numbers => {
   // 1-2-3-4
   // 2-3-4-5
   // 3-4-5-6
@@ -76,7 +76,7 @@ const smallStraightPoints = numbers => {
   return isSmallStraight(numbers) ? 30 : 0
 }
 
-const isLargeStraight = numbers => {
+export const isLargeStraight = numbers => {
   // 1-2-3-4-5
   // 2-3-4-5-6
   const sortedArray = numbers.sort((a, b) => a > b)
@@ -94,7 +94,7 @@ const largeStraightPoints = numbers => {
   return isLargeStraight(numbers) ? 40 : 0
 }
 
-const isYahtzee = numbers => {
+export const isYahtzee = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
   if (sortedArray.length > 5) {
     return false
@@ -111,7 +111,7 @@ const yahtzeePoints = numbers => {
   return isYahtzee(numbers) ? 50 : 0
 }
 
-const isChance = numbers => {
+export const isChance = numbers => {
   return isThreeOfKind(numbers) ||
   isFourOfKind(numbers) ||
   isFullHouse(numbers) ||
