@@ -8,7 +8,8 @@ const sumAll = numbers => {
 
 const isThreeOfKind = numbers => {
   const sortedArray = numbers.sort((a, b) => a > b)
-  if (sortedArray.length > 5 || isFullHouse(numbers)) return false
+  if (sortedArray.length > 5) return false
+  if (isFullHouse(numbers)) return true
   let sameNumbers = 0
   sortedArray.reduce((a, b) => {
     if (a === b) sameNumbers = sameNumbers + 1
@@ -111,16 +112,12 @@ const yahtzeePoints = numbers => {
 }
 
 const isChange = numbers => {
-  const sortedArray = numbers.sort((a, b) => a > b)
-  if (sortedArray.length > 5) {
-    return false
-  }
-  let sameNumbers = 0
-  sortedArray.reduce((a, b) => {
-    if (a === b) sameNumbers = sameNumbers + 1
-    return b
-  })
-  return sameNumbers + 1 >= 2
+  return isThreeOfKind(numbers) ||
+  isFourOfKind(numbers) ||
+  isFullHouse(numbers) ||
+  isSmallStraight(numbers) ||
+  isLargeStraight(numbers) ||
+  isYahtzee(numbers)
 }
 
 const chancePoints = numbers => {

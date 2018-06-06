@@ -16,6 +16,8 @@ class Home extends Component {
     const onPressRoll = () => {
       this.setState({
         diceNumbers: getRandomNumberArray()
+        // diceNumbers: [5, 5, 4, 4, 5]
+        // diceNumbers: [5, 6, 3, 4, 1]
       })
     }
 
