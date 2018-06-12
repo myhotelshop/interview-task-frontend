@@ -140,15 +140,8 @@ export const getRandomNumberArray = () => {
 }
 
 export const getTotalPoints = numbers => {
-  return (
-    threeOfKindPoints(numbers) +
-    fourOfKindPoints(numbers) +
-    fullHousePoints(numbers) +
-    smallStraightPoints(numbers) +
-    largeStraightPoints(numbers) +
-    yahtzeePoints(numbers) +
-    chancePoints(numbers)
-  )
+  const pointsArray = patterns.map(pattern => pattern.points(numbers))
+  return pointsArray.reduce((a, b) => a + b)
 }
 
 export const patterns = [
