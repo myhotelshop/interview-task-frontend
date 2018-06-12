@@ -122,9 +122,7 @@ const chancePoints = numbers => {
   return isChance(numbers) ? sumAll(numbers) : 0
 }
 
-//
 // ** ALL GLOBAL FUNCTIONS THAT ARE BEING USED IN THE APP ** //
-//
 export const getRandomDiceNumber = () => {
   return Math.floor(Math.random() * 6) + 1
 }
