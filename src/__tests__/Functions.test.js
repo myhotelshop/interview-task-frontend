@@ -38,8 +38,8 @@ test ('Get isFullHouse', () => {
 
 test ('Get isSmallStraight', () => {
   expect (isSmallStraight([1, 2, 3, 4, 6])).toBe(true)
-  expect (isSmallStraight([1, 2, 3, 4, 4])).toBe(true)
   expect (isSmallStraight([2, 3, 4, 5, 5])).toBe(true)
+  expect (isSmallStraight([1, 2, 2, 3, 4])).toBe(true)
   expect (isSmallStraight([1, 3, 4, 5, 5])).toBe(false)
   expect (isSmallStraight([1, 2, 3, 6, 6])).toBe(false)
   expect (isSmallStraight([1, 2, 4, 5, 6])).toBe(false)

@@ -32,7 +32,7 @@ const getConsecutiveNumberCount = numbers => {
   const consecutiveNumbersArray = []
   sortedArray.reduce((a, b) => {
     if (a + 1 === b) consecutiveNumbers = consecutiveNumbers + 1
-    else consecutiveNumbers = 0
+    else if (a !== b) consecutiveNumbers = 0 // => In case of 1-2-2-3-4
     consecutiveNumbers > 0 && consecutiveNumbersArray.push(consecutiveNumbers)
     return b
   })
