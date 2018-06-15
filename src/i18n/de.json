@@ -1,0 +1,17 @@
+{
+  "appName": "Würfelspiel",
+  "rollButtonLabel": "Rolle die Würfel",
+  "rollingButtonLabel": "Die Würfel würfeln",
+  "stopLabel": "Tippen Sie erneut auf Anhalten",
+  "pattern": "Muster",
+  "isMatch": "Befund",
+  "points": "Partitur",
+  "threeOfKind": "Drei gleiche",
+  "fourOfKind": "Vier von einer Sorte",
+  "fullHouse": "Full House",
+  "smallStraight": "Kleine Gerade",
+  "largeStraight": "Große Gerade",
+  "yahtzee": "Yahtzee",
+  "chance": "Möglichkeit",
+  "total": "GESAM"
+}

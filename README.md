@@ -1,87 +1,98 @@
-# Simple Dice Game: Yahtzee
+# Dice Game
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+[![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
-Goal is to implement a simplified version of the dice game Yahtzee.
-https://en.wikipedia.org/wiki/Yahtzee
+Simplified version of the dice game [Yahtzee](https://en.wikipedia.org/wiki/Yahtzee).
 
-The task interest is focusing on the pattern algorithms of the dice outcome and the software architecture.
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and [Bootstrap](https://getbootstrap.com/).
 
-## Task Description
+## Table of Contents
+- [How To Start](#how-to-start)
+- [Folder Structure](#folder-structure)
+- [Available Scripts](#available-scripts)
+  - [yarn start](#yarn-start)
+  - [yarn test](#yarn-test)
+  - [yarn run build](#yarn-build)
+  - [yarn run eject](#yarn-eject)
 
-Fork this project, implement your solution and open a Pull Request at github.
+## How To Start
+**Step 1:** git clone this repo:
 
-### User interface
+**Step 2:** cd to the cloned repo:
 
-The user interface has two parts, a dice shaker and an outcome table.
+**Step 3:** Install the Application with `yarn` or `npm i`
 
-The user can roll the dice shaker and can see the outcome of that roll in the outcome table. 
+## Folder Structure
+```
+my-app/
+  node_modules/
+  public/
+    index.html
+    favicon.ico
+  src/
+    app/
+      components/
+        dice.js
+        diceRoller.js
+        footer.js
+        header.js
+        resultsTable.js
+      containers/
+        home.js
+      functions.js
+      index.js
+    assets/
+    index.css
+    index.js
+  .eslint.json
+  .gitignore
+  package.json
+  README.md
+```
 
-#### 1. Dice shaker
+For the project to build, **these files must exist with exact filenames**:
 
-The dice shaker contains a button for rolling all of the five contained dices and shows the outcome of these.
+* `public/index.html` is the page template;
+* `src/index.js` is the JavaScript entry point.
 
-The button has the label 'Roll'. Further styles are not necessary.
-Each time the user clicks this button, all of the five dices are rerolled at once.
-Further user interaction like rolling a subset of the five dices is not necessary.
+You can delete or rename the other files.
 
-The dices simply show their value as a number. Further drawing of the dice values is not necessary.  
+You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
+You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
 
-#### 2. Outcome table
+Only files inside `public` can be used from `public/index.html`.<br>
 
-Each time the dice shaker is rerolled, the outcome table shows for the current dice values the possible outcome on the game board.
+## Available Scripts
 
-The outcome table only shows this lower section of the game board.
-https://en.wikipedia.org/wiki/Yahtzee#Lower_section
+In the project directory, you can run:
 
-It has two columns.
-One column for the label of the pattern ('Three Of A Kind', ...).
-Another column for the outcome which the current dice values would result in.
+### `yarn start`
 
-Their is no further user interaction than rolling the dice shaker.
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Example
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-The user clicks the 'Roll'-Button and get the result [5, 5, 4, 4, 5]. The outcome table shows:
+### `yarn test`
 
-- Three of a Kind | 23
-- Four of a Kind | 0
-- Full House | 25
-- Small Straight | 0
-- Large Straight | 0
-- Yahtzee | 0
-- Chance | 23
+Launches the test runner in the interactive watch mode.
 
-The user clicks the 'Roll'-Button again and get the result [5, 6, 3, 4, 1]. The updated outcome table shows:
+### `yarn build`
 
-- Three of a Kind | 0
-- Four of a Kind | 0
-- Full House | 0
-- Small Straight | 30
-- Large Straight | 0
-- Yahtzee | 0
-- Chance | 19
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Implementation
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-- The software must be executable at a local environment.
-- The software must be compatible with modern browsers. Supporting old browsers is not necessary.
+### `yarn eject`
 
-### Documentation
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
- - Document how your software has to be setup and executed. You may use any automation tools you want (or not).
- - Document your code where needed
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Test and execution
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Explain how to test your software locally. This includes documentation on how to run automated tests, if any.
-
-## Tools
-
-Implement the software in React. Apart from that, you may choose any tools, frameworks, libraries or packages you like.
-
-## Optional Tasks
-
- - multi-language interface
- - further game implementations 
- - support for old browsers
- - Got some Docker skills? Create a Dockerfile of your software
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 

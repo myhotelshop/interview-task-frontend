@@ -1,0 +1,44 @@
+/* bootstrap */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+/* override bootstrap styles */
+.btn {
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: orange;
+  color: white;
+  transition: all 0.2s ease-in; 
+}
+
+.btn:hover {
+  background-color: orangered;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: orange;
+  color: white;
+  padding: 1rem;
+}
+
+.footer {
+  display: flex;
+}
+
+.dice-image {
+  height: 80px;
+  height: 80px;
+}
+
+/* App-Wide styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+}

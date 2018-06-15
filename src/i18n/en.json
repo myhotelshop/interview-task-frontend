@@ -1,0 +1,17 @@
+{
+  "appName": "Dice Game",
+  "rollButtonLabel": "Roll The Dices",
+  "rollingButtonLabel": "Rolling",
+  "stopLabel": "Tap Again To Stop",
+  "pattern": "Pattern",
+  "isMatch": "Is Match",
+  "points": "Points",
+  "threeOfKind": "Three Of A Kind",
+  "fourOfKind": "Four Of A Kind",
+  "fullHouse": "Full House",
+  "smallStraight": "Small Straight",
+  "largeStraight": "Large Straight",
+  "yahtzee": "Yahtzee",
+  "chance": "Chance",
+  "total": "TOTAL"
+}
