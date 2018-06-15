@@ -29,11 +29,16 @@ const getSameNumberArray = sortedArray => {
 const getConsecutiveNumberCount = numbers => {
   const sortedArray = getSortedArray(numbers)
   let consecutiveNumbers = 0
+  const consecutiveNumbersArray = []
   sortedArray.reduce((a, b) => {
     if (a + 1 === b) consecutiveNumbers = consecutiveNumbers + 1
+    else consecutiveNumbers = 0
+    consecutiveNumbers > 0 && consecutiveNumbersArray.push(consecutiveNumbers)
     return b
   })
-  return consecutiveNumbers + 1
+
+  // Return the max consecutive sequence if array have at least one member
+  return consecutiveNumbersArray.length > 0 ? Math.max(...consecutiveNumbersArray) + 1 : 0
 }
 
 export const isThreeOfKind = numbers => {
