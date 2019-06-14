@@ -6,17 +6,6 @@
 
 <script>
 export default {
-  data: function() {
-    /**
-     * The unsortedArray property is needed to store the initial state and order of the diceNumberArray values
-     * since they will have to be sorted as a result of countConsecutiveNumbers() function
-     */
-    var unsortedArray = [];
-
-    return {
-      unsortedArray
-    };
-  },
   methods: {
     /*
      * Function that generates a random value of dice from 1 to 6.
@@ -24,7 +13,7 @@ export default {
      * @return {number} value from 1 to 6
      */
     rollRandomDice() {
-      return (this.$store.state.diceNumber = Math.floor(Math.random() * 6) + 1);
+      return (Math.floor(Math.random() * 6) + 1);
     },
 
     /*
@@ -36,7 +25,7 @@ export default {
      * @return {Number[]} diceNumberArray.
      */
     rollRandomDiceArray() {
-      return (this.$store.state.diceNumberArray = [
+      return ( [
         this.rollRandomDice(),
         this.rollRandomDice(),
         this.rollRandomDice(),
@@ -90,6 +79,7 @@ export default {
           return true;
         }
       }
+      return false;
     },
 
     /*
@@ -105,6 +95,7 @@ export default {
           return true;
         }
       }
+      return false;
     },
 
     /*
@@ -123,6 +114,7 @@ export default {
           return true;
         }
       }
+      return false;
     },
 
     /*
@@ -140,6 +132,7 @@ export default {
           }
         }
       }
+      return false;
     },
 
     /*
@@ -172,7 +165,7 @@ export default {
           consecutiveNumbersArray.push(consecutiveNumbers);
         return b;
       });
-      this.$store.state.diceNumberArray = this.unsortedArray;
+      // this.$store.state.diceNumberArray = this.unsortedArray;
       if (consecutiveNumbersArray.length > 0)
         return Math.max(...consecutiveNumbersArray) + 1;
       else return 0;
@@ -188,6 +181,7 @@ export default {
       if (this.countConsecutiveNumbers(diceNumberArray) >= 4) {
         return true;
       }
+      return false;
     },
 
     /*
@@ -200,6 +194,7 @@ export default {
       if (this.countConsecutiveNumbers(diceNumberArray) >= 5) {
         return true;
       }
+      return false;
     },
 
     /*
@@ -247,12 +242,11 @@ export default {
 
     /**
      * The main function calling the rest of the component functions.
-     * 
-     * This function is responsible for the functionality of the component. 
+     *
+     * This function is responsible for the functionality of the component.
      */
     handler() {
-      this.rollRandomDiceArray();
-      this.unsortedArray = this.$store.state.diceNumberArray.slice();
+      this.$store.state.diceNumberArray = this.rollRandomDiceArray();
       this.setScore(this.$store.state.diceNumberArray);
     }
   }
