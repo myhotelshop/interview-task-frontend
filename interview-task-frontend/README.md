@@ -33,3 +33,12 @@ To start the project, use following comands:
   ``` npm run -g serve ```
 5. If you want to create a build, run the following: 
   ``` npm run build ```
+
+  ## How to start testing
+  To test the project, jest, @vue/test-utils, vue-jest, babel-jest are used.
+  1. Install the jest and other components:
+  ``` npm install --save-dev jest @vue/test-utils vue-jest babel-jest ```
+  2. Run testing:
+  ``` npm run test ```
+  3. If you get an error "SyntaxError: Unexpected token import" or "SyntaxError: Unexpected identifier import" try to update babel by running following command:
+  ``` npm install --save-dev babel-core@7.0.0-bridge.0 ```
