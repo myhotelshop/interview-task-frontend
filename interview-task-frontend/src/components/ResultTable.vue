@@ -66,14 +66,11 @@
 <script>
     export default{
         computed: {
-            diceNumber() {
-                return this.$store.state.diceNumber;
-            },
             diceNumberArray() {
-                return this.$store.state.diceNumberArray;
+                return this.$store.getters.DICENUMBERARRAY;
             },
             score() {
-              return this.$store.state.score;
+              return this.$store.getters.SCORE;
             }
 
             }

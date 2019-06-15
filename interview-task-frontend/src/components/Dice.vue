@@ -245,9 +245,11 @@ export default {
      *
      * This function is responsible for the functionality of the component.
      */
-    handler() {
-      this.$store.state.diceNumberArray = this.rollRandomDiceArray();
-      this.setScore(this.$store.state.diceNumberArray);
+     handler(diceNumberArray, scoreArray) {
+      diceNumberArray = this.rollRandomDiceArray();
+      this.$store.dispatch('GET_DICENUMBERARRAY', diceNumberArray);
+      scoreArray = this.setScore(this.$store.getters.DICENUMBERARRAY);
+      this.$store.dispatch('GET_SCORE', scoreArray);
     }
   }
 };
