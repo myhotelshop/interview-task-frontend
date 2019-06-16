@@ -45,13 +45,13 @@ To start the project, use following comands:
 
   ## How to start docker container
   To start the docker container, you need to:
-  1. Install the docker from following link and restart your computer:
+  1. Install the docker from following link and restart the computer:
   ``` https://www.docker.com/get-started ```
-  2. Open the repositor that contains Dockerfile in terminal:
+  2. Open the repository that contains Dockerfile in terminal:
   ``` cd interview-task-frontend ```
   3. Build docker container using following command in the terminal:
   ``` docker build -t yahtzee-container . ``` (you can use any name instead of 'yahtzee-container')
   4. Run the container:
-  ``` docker run -p 8080:80 vue-docker-container ``` (alternatively, if http://localhost:8080 is already used, you can change 8080:80 to other port, for example 8081:80)
+  ``` docker run -p 8080:80 yahtzee-container ``` (alternatively, if http://localhost:8080 is already used, you can change 8080:80 to another port, for example 8081:80)
   5. Open the localhost in your browser:
   ``` http://localhost:8080 ```
