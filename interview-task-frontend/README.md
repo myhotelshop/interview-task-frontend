@@ -26,7 +26,7 @@ To start the project, use following comands:
 1. Git clone this repository (yahtzee-project): 
  ``` git clone [url] ```
 2. Open the repository in the terminal:
-  ``` cd yahtzee-project ```
+  ``` cd interview-task-frontend ```
 3. Install npm package: 
   ``` npm install ```
 4. Run project on a local server: 
@@ -42,3 +42,16 @@ To start the project, use following comands:
   ``` npm run test ```
   3. If you get an error "SyntaxError: Unexpected token import" or "SyntaxError: Unexpected identifier import" try to update babel by running following command:
   ``` npm install --save-dev babel-core@7.0.0-bridge.0 ```
+
+  ## How to start docker container
+  To start the docker container, you need to:
+  1. Install the docker from following link and restart your computer:
+  ``` https://www.docker.com/get-started ```
+  2. Open the repositor that contains Dockerfile in terminal:
+  ``` cd interview-task-frontend ```
+  3. Build docker container using following command in the terminal:
+  ``` docker build -t yahtzee-container . ``` (you can use any name instead of 'yahtzee-container')
+  4. Run the container:
+  ``` docker run -p 8080:80 vue-docker-container ``` (alternatively, if http://localhost:8080 is already used, you can change 8080:80 to other port, for example 8081:80)
+  5. Open the localhost in your browser:
+  ``` http://localhost:8080 ```

@@ -152,7 +152,8 @@ export default {
      * @return {Number} consecutiveNumbers.length
      */
     countConsecutiveNumbers(diceNumberArray) {
-      const sortedArray = this.sortArray(diceNumberArray);
+      const unsortedArray = diceNumberArray;
+      let sortedArray = this.sortArray(diceNumberArray);
       let consecutiveNumbers = 0;
       const consecutiveNumbersArray = [];
       sortedArray.reduce((a, b) => {
@@ -165,6 +166,7 @@ export default {
           consecutiveNumbersArray.push(consecutiveNumbers);
         return b;
       });
+      sortedArray = unsortedArray;
       // this.$store.state.diceNumberArray = this.unsortedArray;
       if (consecutiveNumbersArray.length > 0)
         return Math.max(...consecutiveNumbersArray) + 1;
@@ -236,8 +238,7 @@ export default {
         scoreArray[5] = 0;
       }
       scoreArray[6] = this.sumOfArray(diceNumberArray);
-      this.$store.state.score = scoreArray;
-      return this.$store.state.score;
+      return scoreArray;
     },
 
     /**
