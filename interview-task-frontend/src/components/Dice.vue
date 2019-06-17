@@ -152,7 +152,6 @@ export default {
      * @return {Number} consecutiveNumbers.length
      */
     countConsecutiveNumbers(diceNumberArray) {
-      const unsortedArray = diceNumberArray;
       let sortedArray = this.sortArray(diceNumberArray);
       let consecutiveNumbers = 0;
       const consecutiveNumbersArray = [];
@@ -166,8 +165,6 @@ export default {
           consecutiveNumbersArray.push(consecutiveNumbers);
         return b;
       });
-      sortedArray = unsortedArray;
-      // this.$store.state.diceNumberArray = this.unsortedArray;
       if (consecutiveNumbersArray.length > 0)
         return Math.max(...consecutiveNumbersArray) + 1;
       else return 0;
